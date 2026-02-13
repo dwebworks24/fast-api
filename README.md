@@ -86,14 +86,16 @@ Setup Instructions:
    cd fastapi_app
 
 2. Create a virtual environment and activate it
-   python -m venv venv
+   pip install virtualenv
+   python -m venv env
    # Windows
-   venv\Scripts\activate
+   env\Scripts\activate
    # Linux/Mac
    source venv/bin/activate
 
 3. Install dependencies
-   pip install -r requirements.txt
+    pip freeze > requirements.txt 
+    pip install -r requirements.txt
 
 4. Configure .env file
    DATABASE_URL=postgresql://user:password@localhost:5432/fastapi_db
