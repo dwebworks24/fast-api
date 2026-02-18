@@ -104,7 +104,16 @@ Setup Instructions:
    ACCESS_TOKEN_EXPIRE_MINUTES=30
 
 5. Run Alembic migrations
+   alembic init alembic
    alembic upgrade head
+
+
+  alembic init alembic
+  alembic revision --autogenerate -m "create user table"
+  alembic upgrade head
+
+
+
 
 6. Start the FastAPI server
    uvicorn app.main:app --reload
@@ -124,3 +133,38 @@ Notes:
 
 2.for databse
 - pip install sqlalchemy psycopg2-binary python-dotenv
+
+
+ex: database_type://username:password@host:port/database_name
+
+
+
+
+app/
+│
+├── main.py
+│
+├── core/
+│   ├── config.py
+│   └── security.py
+│
+├── database/
+│   ├── base.py
+│   └── session.py
+│
+├── modules/
+│   ├── users/
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   ├── crud.py
+│   │   └── routes.py
+│   │
+│   ├── auth/
+│   │   ├── schemas.py
+│   │   └── routes.py
+│   │
+│   ├── products/
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   ├── crud.py
+│   │   └── routes.py
