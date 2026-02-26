@@ -138,7 +138,8 @@ Notes:
 ex: database_type://username:password@host:port/database_name
 
 
-
+ if you want run dubug mode setup  env  
+ ctrl+shift+p -> it is sking  enter yor env path _ enter your  env path 
 
 app/
 │
