@@ -98,7 +98,7 @@ Setup Instructions:
     pip install -r requirements.txt
 
 4. Configure .env file
-   DATABASE_URL=postgresql://user:password@localhost:5432/fastapi_db
+   DATABASE_URL=postgresql+psycopg2://user:password@localhost:5432/fastapi_db
    SECRET_KEY=your_jwt_secret_key
    ALGORITHM=HS256
    ACCESS_TOKEN_EXPIRE_MINUTES=30
@@ -169,3 +169,8 @@ app/
 │   │   ├── schemas.py
 │   │   ├── crud.py
 │   │   └── routes.py
+
+
+
+FAST api Work fLOW 
+Request → Pydantic → Route → Depends(DB, Auth) → Service → SQLAlchemy → DB
